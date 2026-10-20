@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilisca Doces</title>
+<meta name="description" content="Doces caseiros artesanais feitos com as receitas de família da Doceria da Bia, em Bela Vista de Goiás. Retirada no local.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" href="logo.jpg" type="image/png" class="icone">
+<style>
+    
+  :root {
+    --marrom-base: #6b3e3e;
+    --marrom-escuro: #4b2e2e;
+    --rosa-nav: #f8d7da;
+    --rosa-banner: #f3c1c6;
+    --fundo-geral: #fff8f6;
+    --branco-card: #ffffff;
+    --texto-escuro: #3a1a1a;
+    --texto-medio: #7a4a4a;
+    --sombra: rgba(107,62,62,0.12);
+    --radius: 18px;
+    --transition: 0.25s cubic-bezier(.4,0,.2,1);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 17px; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--fundo-geral);
+    color: var(--texto-escuro);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.5;
+  }
+
+  a { color: inherit; }
+
+  /* ====== HEADER ====== */
+  header {
+    background: var(--marrom-base);
+    position: sticky; top: 0; z-index: 1000;
+    box-shadow: 0 2px 14px var(--sombra);
+  }
+  .header-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 28px;
+  }
+  .logo {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.1rem; color: #fff5f7;
+    text-decoration: none; letter-spacing: .5px;
+    display: flex; align-items: center; gap: 10px;
+    line-height: 1;
+  }
+  .logo-mark {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--rosa-banner);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; flex-shrink: 0;
+  }
+  .logo-mark.logo-img { overflow: hidden; border: 2px solid var(--rosa-banner); background: #fff; }
+  .logo-mark.logo-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
+  .logo-text small {
+    display: block; font-family: 'Lato', sans-serif;
+    font-size: .62rem; letter-spacing: 2.5px; font-weight: 700;
+    color: var(--rosa-banner); margin-top: -4px;
+  }
+  nav { display: flex; gap: 4px; align-items: center; }
+  nav a {
+    color: #fff5f7; text-decoration: none;
+    padding: 9px 18px; border-radius: 30px;
+    font-size: .98rem; font-weight: 700; letter-spacing: .2px;
+    transition: background var(--transition), color var(--transition);
+  }
+  nav a:hover { background: rgba(255,255,255,.15); }
+  nav a.active { background: var(--rosa-banner); color: var(--marrom-escuro); }
+  .header-icons { display: flex; gap: 6px; align-items: center; }
+  .icon-btn {
+    background: none; border: none; cursor: pointer;
+    color: #fff5f7; font-size: 1.25rem;
+    position: relative; padding: 10px; border-radius: 50%;
+    transition: background var(--transition);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .icon-btn:hover { background: rgba(255,255,255,.15); }
+  .cart-badge {
+    position: absolute; top: 2px; right: 2px;
+    background: var(--rosa-banner); color: var(--marrom-escuro);
+    font-size: .65rem; font-weight: 700;
+    border-radius: 50%; width: 18px; height: 18px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hamburger {
+    display: none; background: none; border: none;
+    color: #fff5f7; font-size: 1.5rem; cursor: pointer;
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    background: linear-gradient(160deg, var(--rosa-nav) 0%, #fbe6e8 55%, var(--fundo-geral) 100%);
+    padding: 60px 28px 70px;
+    position: relative; overflow: hidden;
+  }
+  .hero-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center;
+  }
+  .hero-text h1 {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: clamp(2.3rem, 4.4vw, 3.4rem);
+    color: var(--marrom-escuro); line-height: 1.18; margin-bottom: 18px;
+  }
+  .hero-text h1 .script {
+    font-family: 'Dancing Script', cursive; font-weight: 700;
+    color: var(--marrom-base); font-size: 1.18em; display: inline-block;
+  }
+  .hero-text p {
+    font-size: 1.08rem; color: var(--texto-medio);
+    line-height: 1.7; margin-bottom: 30px; max-width: 460px;
+  }
+  .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--marrom-base); color: #fff5f7;
+    padding: 14px 30px; border-radius: 40px;
+    font-weight: 700; font-size: .98rem; text-decoration: none;
+    border: none; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(107,62,62,.28);
+    transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover {
+    background: var(--marrom-escuro); transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(75,46,46,.35);
+  }
+  .btn-secondary {
+    background: var(--branco-card); color: var(--marrom-escuro);
+    padding: 14px 30px; border-radius: 40px;
+    font-weight: 700; font-size: .98rem; text-decoration: none;
+    border: 2px solid var(--rosa-banner); cursor: pointer;
+    transition: all var(--transition);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--rosa-nav); border-color: var(--marrom-base); }
+
+  .hero-art {
+    position: relative; aspect-ratio: 1/0.85;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-art-frame {
+    position: absolute; inset: 6%;
+    border: 2px dashed var(--rosa-banner); border-radius: 26px;
+  }
+  .hero-art svg { width: 58%; max-width: 320px; position: relative; z-index: 2; }
+  .hero-deco { position: absolute; color: var(--rosa-banner); }
+
+  /* ====== BENEFÍCIOS ====== */
+  .benefits-wrap { max-width: 1240px; margin: -34px auto 0; padding: 0 28px; position: relative; z-index: 5; }
+  .benefits {
+    background: var(--branco-card); border-radius: 22px;
+    box-shadow: 0 10px 32px var(--sombra);
+    padding: 30px 26px;
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .benefit { display: flex; gap: 14px; align-items: flex-start; }
+  .benefit-icon {
+    width: 50px; height: 50px; border-radius: 50%; flex-shrink: 0;
+    background: var(--rosa-nav); color: var(--marrom-base);
+    display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+  }
+  .benefit h4 { font-size: .98rem; color: var(--marrom-escuro); margin-bottom: 4px; }
+  .benefit p { font-size: .82rem; color: var(--texto-medio); line-height: 1.5; }
+
+  /* ====== SEÇÕES ====== */
+  .section { padding: 60px 28px; max-width: 1240px; margin: 0 auto; }
+  .section-head {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 30px; gap: 20px; flex-wrap: wrap;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1.9rem; color: var(--marrom-escuro);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title i { color: var(--rosa-banner); font-size: 1.5rem; }
+  .link-all {
+    border: 2px solid var(--rosa-banner); background: var(--branco-card);
+    color: var(--marrom-base); padding: 10px 20px; border-radius: 30px;
+    font-weight: 700; font-size: .88rem; cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: all var(--transition);
+  }
+  .link-all:hover { background: var(--marrom-base); color: #fff5f7; border-color: var(--marrom-base); }
+
+  /* ====== CATEGORIAS ====== */
+  .categories {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 28px;
+  }
+  .cat-btn {
+    background: var(--branco-card); border: 2px solid var(--rosa-banner);
+    color: var(--marrom-base); padding: 9px 20px; border-radius: 30px;
+    font-weight: 700; font-size: .85rem; cursor: pointer;
+    transition: all var(--transition); display: flex; align-items: center; gap: 6px;
+  }
+  .cat-btn:hover, .cat-btn.active {
+    background: var(--marrom-base); color: #fff5f7; border-color: var(--marrom-base);
+  }
+
+  /* ====== PRODUCT CARDS ====== */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 22px;
+  }
+  .product-card {
+    background: var(--branco-card);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--rosa-banner);
+    box-shadow: 0 4px 16px var(--sombra);
+    transition: transform var(--transition), box-shadow var(--transition);
+    position: relative; overflow: hidden; cursor: pointer;
+    display: flex; flex-direction: column;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 26px rgba(107,62,62,.18);
+  }
+  .card-img {
+    width: 100%; aspect-ratio: 1/0.82;
+    background: linear-gradient(135deg, var(--rosa-banner), var(--rosa-nav));
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .card-img { overflow: hidden; }
+  .card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+  .card-badge {
+    position: absolute; top: 10px; left: 10px;
+    background: var(--marrom-base); color: #fff5f7;
+    font-size: .68rem; font-weight: 700; padding: 4px 11px;
+    border-radius: 20px; text-transform: uppercase;
+  }
+  .card-badge.top-seller { box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+  .card-badge.rank-1, .rank-crown.rank-1 {
+    background: linear-gradient(135deg, #ffd84d, #e8a020); color: #4a2e00;
+  }
+  .card-badge.rank-2, .rank-crown.rank-2 {
+    background: linear-gradient(135deg, #f1f3f5, #aab2bb); color: #2f3640;
+  }
+  .card-badge.rank-3, .rank-crown.rank-3 {
+    background: linear-gradient(135deg, #e0a070, #a8641f); color: #fff8f0;
+  }
+  .card-badge .crown-emoji { margin-right: 4px; font-size: .9em; }
+  .rank-crown {
+    display: inline-flex; align-items: center; gap: 6px; margin-bottom: 8px;
+    font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 20px;
+    text-transform: uppercase; box-shadow: 0 2px 8px rgba(0,0,0,.2);
+  }
+  .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; flex: 1; }
+  .card-rating { display: flex; align-items: center; gap: 5px; margin-bottom: 8px; min-height: 18px; }
+  .stars { color: #e8a020; font-size: .82rem; letter-spacing: 1px; }
+  .rating-count { color: var(--texto-medio); font-size: .76rem; }
+  .card-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem; color: var(--marrom-escuro);
+    margin-bottom: 6px; font-weight: 700;
+  }
+  .card-desc {
+    font-size: .86rem; color: var(--texto-medio);
+    margin-bottom: 12px; line-height: 1.55; flex: 1;
+  }
+  .card-prices {
+    background: var(--rosa-nav); border-radius: 12px;
+    padding: 10px 14px; margin-bottom: 14px;
+  }
+  .price-line {
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: .85rem; color: var(--marrom-escuro); padding: 3px 0;
+  }
+  .price-line strong { color: var(--marrom-base); font-size: .92rem; }
+  .modal-prices {
+    background: var(--rosa-nav); border-radius: 14px;
+    padding: 14px 18px; margin-bottom: 6px;
+  }
+  .modal-prices .price-line { font-size: .98rem; padding: 6px 0; }
+  .modal-prices .price-line strong { font-size: 1.08rem; }
+  .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .card-price { font-weight: 700; color: var(--marrom-base); font-size: 1.12rem; line-height: 1.2; }
+  .card-price small { font-size: .72rem; font-weight: 400; color: var(--texto-medio); display: block; }
+  .btn-add {
+    background: var(--marrom-base); color: #fff5f7;
+    border: none; border-radius: 30px; padding: 9px 16px;
+    font-size: .85rem; cursor: pointer; font-weight: 700;
+    transition: background var(--transition), transform var(--transition);
+    display: flex; align-items: center; gap: 7px; white-space: nowrap;
+  }
+  .btn-add:hover { background: var(--marrom-escuro); transform: scale(1.03); }
+
+  /* ====== SOBRE / MOMENTOS ====== */
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.15fr; gap: 0;
+    border-radius: 24px; overflow: hidden;
+    box-shadow: 0 6px 24px var(--sombra);
+  }
+  .about-art {
+    background: linear-gradient(150deg, var(--rosa-banner), var(--rosa-nav));
+    display: flex; align-items: center; justify-content: center;
+    padding: 40px; min-height: 280px;
+  }
+  .about-art svg { width: 60%; max-width: 180px; }
+  /* Foto com a proporção original: nada é cortado */
+  .about-art.has-photo {
+    padding: 0; min-height: 0 !important; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .about-art.has-photo img {
+    width: 100%; height: auto; max-width: 100%;
+    object-fit: contain; display: block;
+  }
+  .about-copy {
+    background: var(--branco-card); padding: 44px 42px;
+  }
+  .about-copy .script-line {
+    font-family: 'Dancing Script', cursive; font-size: 1.7rem;
+    color: var(--marrom-base); line-height: 1.1;
+  }
+  .about-copy h2 {
+    font-family: 'Playfair Display', serif; font-weight: 700;
+    font-size: 1.7rem; color: var(--marrom-escuro); margin-bottom: 14px;
+  }
+  .about-copy p { color: var(--texto-medio); line-height: 1.75; font-size: .96rem; }
+
+  /* ====== DEPOIMENTOS ====== */
+  .testimonials-panel {
+    background: var(--rosa-nav); border-radius: 24px; padding: 36px 32px;
+    display: flex; flex-direction: column; gap: 18px;
+  }
+  .testimonials-panel .section-title { font-size: 1.5rem; margin-bottom: 4px; }
+  .testimonial-card {
+    background: var(--branco-card); border-radius: 16px;
+    padding: 20px; box-shadow: 0 3px 12px var(--sombra);
+  }
+  .t-quote-mark { color: var(--rosa-banner); font-size: 1.8rem; font-family: 'Playfair Display', serif; line-height: 1; margin-bottom: 6px; }
+  .t-text { color: var(--texto-medio); line-height: 1.65; font-size: .9rem; font-style: italic; margin-bottom: 12px; }
+  .t-header { display: flex; align-items: center; gap: 10px; }
+  .t-avatar {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--marrom-base), var(--rosa-banner));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; color: #fff; flex-shrink: 0;
+  }
+  .t-name { font-weight: 700; color: var(--marrom-escuro); font-size: .85rem; }
+  .t-stars { color: #e8a020; font-size: .74rem; }
+
+  .about-testimonials-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 26px; align-items: stretch;
+  }
+
+  /* ====== NEWSLETTER ====== */
+  .newsletter-section {
+    background: var(--branco-card); border-radius: 24px;
+    padding: 48px 32px; text-align: center;
+    border: 1.5px solid var(--rosa-banner);
+    box-shadow: 0 4px 18px var(--sombra);
+  }
+  .newsletter-section .nl-icon {
+    width: 60px; height: 60px; border-radius: 50%; background: var(--rosa-nav);
+    color: var(--marrom-base); font-size: 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 16px;
+  }
+  .newsletter-section h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.7rem; color: var(--marrom-escuro); margin-bottom: 10px; }
+  .newsletter-section p { color: var(--texto-medio); margin-bottom: 24px; }
+  .newsletter-form { display: flex; gap: 10px; max-width: 460px; margin: 0 auto; flex-wrap: wrap; }
+  .newsletter-form input {
+    flex: 1; border: 2px solid var(--rosa-banner); border-radius: 30px;
+    padding: 12px 20px; font-size: .95rem; outline: none;
+    transition: border-color var(--transition); min-width: 200px;
+    font-family: 'Lato', sans-serif;
+  }
+  .newsletter-form input:focus { border-color: var(--marrom-base); }
+  .field-error {
+    color: #b04949; font-size: .82rem; margin-top: 8px; text-align: left;
+    display: none; align-items: center; gap: 6px;
+  }
+  .field-error.show { display: flex; }
+  .newsletter-form input.invalid { border-color: #b04949; }
+
+  /* ====== CONTATO ====== */
+  .contact-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 20px;
+  }
+  .contact-card {
+    background: var(--branco-card); border-radius: 20px; padding: 26px;
+    border: 1.5px solid var(--rosa-banner); box-shadow: 0 4px 18px var(--sombra);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .contact-icon {
+    background: var(--rosa-nav); border-radius: 50%; width: 52px; height: 52px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.35rem;
+    color: var(--marrom-base); flex-shrink: 0;
+  }
+  .contact-card h4 { color: var(--marrom-escuro); font-size: 1rem; margin-bottom: 4px; }
+  .contact-card span { display: block; color: var(--texto-medio); font-size: .88rem; }
+
+  .contact-form-wrap {
+    background: var(--branco-card); border-radius: 20px; padding: 30px;
+    border: 1.5px solid var(--rosa-banner); box-shadow: 0 4px 18px var(--sombra);
+    margin-top: 26px;
+  }
+  .contact-form-wrap h3 {
+    font-family: 'Playfair Display', serif; color: var(--marrom-escuro);
+    font-size: 1.25rem; margin-bottom: 18px;
+  }
+  .form-row { margin-bottom: 16px; }
+  .form-row label {
+    display: block; font-size: .88rem; font-weight: 700;
+    color: var(--marrom-escuro); margin-bottom: 6px;
+  }
+  .form-row input, .form-row textarea, .form-row select {
+    width: 100%; border: 2px solid var(--rosa-banner); border-radius: 12px;
+    padding: 11px 14px; font-size: .92rem; outline: none;
+    font-family: 'Lato', sans-serif; color: var(--texto-escuro);
+    transition: border-color var(--transition); background: var(--fundo-geral);
+  }
+  .form-row input:focus, .form-row textarea:focus, .form-row select:focus { border-color: var(--marrom-base); }
+  .form-row input.invalid, .form-row textarea.invalid { border-color: #b04949; }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 560px) { .form-grid-2 { grid-template-columns: 1fr; } }
+
+  /* ====== CARRINHO SIDEBAR ====== */
+  .cart-overlay {
+    position: fixed; inset: 0; background: rgba(58,26,26,.45);
+    z-index: 2000; opacity: 0; pointer-events: none;
+    transition: opacity var(--transition);
+  }
+  .cart-overlay.open { opacity: 1; pointer-events: all; }
+  .cart-sidebar {
+    position: fixed; top: 0; right: -420px; height: 100vh;
+    width: min(400px, 100vw);
+    background: var(--fundo-geral); z-index: 2001;
+    display: flex; flex-direction: column;
+    box-shadow: -6px 0 30px rgba(0,0,0,.18);
+    transition: right var(--transition);
+  }
+  .cart-sidebar.open { right: 0; }
+  .cart-head {
+    background: var(--marrom-base); color: #fff5f7;
+    padding: 20px 24px; display: flex; align-items: center; justify-content: space-between;
+  }
+  .cart-head h3 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; }
+  .cart-close {
+    background: none; border: none; color: #fff5f7; font-size: 1.3rem; cursor: pointer;
+  }
+  .cart-body { flex: 1; overflow-y: auto; padding: 20px; }
+  .cart-empty { text-align: center; color: var(--texto-medio); padding: 50px 0; font-size: 1rem; }
+  .cart-empty i { font-size: 2.6rem; color: var(--rosa-banner); margin-bottom: 14px; display: block; }
+  .cart-item {
+    display: flex; gap: 12px; align-items: center;
+    background: var(--branco-card); border-radius: 12px; padding: 12px;
+    margin-bottom: 12px; border: 1px solid var(--rosa-banner);
+  }
+  .cart-item-emoji {
+    flex-shrink: 0; width: 42px; height: 42px; border-radius: 10px;
+    background: var(--rosa-nav); display: flex; align-items: center; justify-content: center;
+    object-fit: cover; object-position: center; overflow: hidden;
+  }
+  .cart-item-info { flex: 1; }
+  .cart-item-name { font-weight: 700; color: var(--marrom-escuro); font-size: .96rem; }
+  .cart-item-price { color: var(--marrom-base); font-weight: 700; font-size: .98rem; }
+  .qty-ctrl { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+  .qty-btn {
+    background: var(--rosa-nav); border: none; border-radius: 50%;
+    width: 32px; height: 32px; cursor: pointer; font-weight: 700; color: var(--marrom-base);
+    display: flex; align-items: center; justify-content: center; font-size: 1.15rem;
+  }
+  .qty-num { font-weight: 700; color: var(--marrom-escuro); min-width: 20px; text-align: center; font-size: .98rem; }
+  .cart-remove { background: none; border: none; color: #b04949; cursor: pointer; font-size: 1.1rem; padding: 8px; }
+  .cart-comment { margin-bottom: 16px; }
+  .cart-comment label { font-size: .92rem; color: var(--marrom-escuro); font-weight: 700; display: block; margin-bottom: 6px; }
+  .cart-comment textarea {
+    width: 100%; border: 2px solid var(--rosa-banner); border-radius: 12px;
+    padding: 10px; font-size: .92rem; resize: none; outline: none;
+    font-family: 'Lato', sans-serif; transition: border-color var(--transition);
+    background: var(--branco-card);
+  }
+  .cart-comment textarea:focus { border-color: var(--marrom-base); }
+  .pickup-info {
+    background: var(--rosa-nav); border-radius: 12px; padding: 12px 16px;
+    margin-bottom: 14px; display: flex; align-items: center; gap: 10px;
+    font-size: .9rem; color: var(--marrom-escuro);
+  }
+  .pickup-info i { color: var(--marrom-base); font-size: 1.1rem; }
+  .checkout-form { margin-bottom: 6px; }
+  .checkout-form h4 {
+    font-size: .92rem; color: var(--marrom-escuro); margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .cart-footer { padding: 20px 24px; border-top: 2px solid var(--rosa-banner); max-height: 62vh; overflow-y: auto; }
+
+  /* ====== ETAPA DE PAGAMENTO ====== */
+  .pay-step { padding: 22px 20px; text-align: center; }
+  .pay-step h4 { font-family: 'Playfair Display', serif; color: var(--marrom-escuro); font-size: 1.2rem; margin-bottom: 6px; }
+  .pay-step p { color: var(--texto-medio); font-size: .9rem; margin-bottom: 8px; line-height: 1.55; }
+  .pay-summary { background: var(--rosa-nav); border-radius: 12px; padding: 10px 14px; margin-bottom: 14px; font-size: .9rem; color: var(--marrom-escuro); }
+  .btn-ghost {
+    width: 100%; background: transparent; color: var(--marrom-base); border: 2px solid var(--rosa-banner);
+    border-radius: 30px; padding: 11px; font-size: .92rem; font-weight: 700; cursor: pointer; margin-top: 10px;
+    display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none;
+    transition: all var(--transition);
+  }
+  .btn-ghost:hover { background: var(--rosa-nav); border-color: var(--marrom-base); }
+  .cart-total { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-weight: 700; }
+  .cart-total .total-val { font-size: 1.3rem; color: var(--marrom-base); }
+  .payment-methods { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  .pay-btn {
+    flex: 1; background: var(--rosa-nav); border: 2px solid var(--rosa-banner);
+    border-radius: 10px; padding: 11px 8px; cursor: pointer;
+    font-size: .86rem; font-weight: 700; color: var(--marrom-base);
+    transition: all var(--transition); display: flex; align-items: center;
+    justify-content: center; gap: 5px; min-width: 78px;
+  }
+  .pay-btn.active, .pay-btn:hover { background: var(--marrom-base); color: #fff5f7; border-color: var(--marrom-base); }
+  .btn-checkout {
+    width: 100%; background: var(--marrom-base); color: #fff5f7;
+    border: none; border-radius: 30px; padding: 14px;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    box-shadow: 0 4px 14px rgba(107,62,62,.3);
+    transition: background var(--transition), transform var(--transition);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-checkout:hover { background: var(--marrom-escuro); transform: translateY(-2px); }
+  .btn-checkout:disabled { opacity: .55; cursor: not-allowed; transform:none; }
+
+  /* ====== MODAL PRODUTO ====== */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(58,26,26,.45);
+    z-index: 3000; opacity: 0; pointer-events: none;
+    transition: opacity var(--transition); display: flex;
+    align-items: center; justify-content: center; padding: 20px;
+  }
+  .modal-overlay.open { opacity: 1; pointer-events: all; }
+  .modal {
+    background: var(--fundo-geral); border-radius: 24px; max-width: 480px; width: 100%;
+    padding: 0; position: relative;
+    transform: scale(.94); transition: transform var(--transition);
+    max-height: 90vh; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  /* Parte que rola: foto, nome, descrição e informações extras */
+  .modal-scroll {
+    flex: 1 1 auto; min-height: 0; overflow-y: auto;
+    padding: 32px 32px 16px; -webkit-overflow-scrolling: touch;
+  }
+  /* Parte fixa: preços e botão de adicionar */
+  .modal-fixed {
+    flex: 0 0 auto; padding: 14px 32px 24px;
+    background: var(--fundo-geral); border-top: 1.5px solid var(--rosa-banner);
+    box-shadow: 0 -6px 14px rgba(58,26,26,.08);
+  }
+  .modal-fixed .modal-prices { margin-bottom: 0; }
+  .modal-overlay.open .modal { transform: scale(1); }
+  .modal-close {
+    z-index: 5;
+    position: absolute; top: 16px; right: 16px;
+    background: var(--rosa-nav); border: none; border-radius: 50%;
+    width: 36px; height: 36px; cursor: pointer; font-size: 1.1rem;
+    color: var(--marrom-base); display: flex; align-items: center; justify-content: center;
+  }
+  .modal-emoji {
+    text-align: center; margin-bottom: 14px;
+    width: 90px; height: 90px; border-radius: 50%; margin-left: auto; margin-right: auto;
+    background: linear-gradient(135deg, var(--rosa-banner), var(--rosa-nav));
+    display: flex; align-items: center; justify-content: center;
+    object-fit: cover; object-position: center; flex-shrink: 0;
+    cursor: zoom-in; border: 3px solid var(--rosa-banner);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .modal-emoji:hover { transform: scale(1.06); box-shadow: 0 6px 18px var(--sombra); }
+  .modal-zoom-hint { text-align: center; font-size: .76rem; color: var(--texto-medio); margin: -6px 0 12px; }
+  .modal-zoom-hint i { margin-right: 4px; }
+
+  /* ====== FOTO EM TELA CHEIA ====== */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 6000;
+    background: rgba(30,12,12,.92);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 20px; opacity: 0; pointer-events: none;
+    transition: opacity var(--transition); cursor: zoom-out;
+  }
+  .lightbox.open { opacity: 1; pointer-events: all; }
+  .lightbox img {
+    max-width: 96vw; max-height: 86vh; object-fit: contain;
+    border-radius: 14px; box-shadow: 0 10px 40px rgba(0,0,0,.5);
+  }
+  .lightbox-caption {
+    color: #fff5f7; font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; margin-top: 14px; text-align: center;
+  }
+  .lightbox-close {
+    position: absolute; top: 16px; right: 16px;
+    background: rgba(255,255,255,.15); border: none; border-radius: 50%;
+    width: 44px; height: 44px; color: #fff5f7; font-size: 1.3rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .lightbox-close:hover { background: rgba(255,255,255,.28); }
+  .modal h2 { font-family: 'Playfair Display', serif; color: var(--marrom-escuro); margin-bottom: 10px; text-align: center; }
+  .modal-price { font-size: 1.35rem; font-weight: 700; color: var(--marrom-base); margin-bottom: 10px; text-align: center; }
+  .modal .card-rating { justify-content: center; margin-bottom: 16px; }
+  .modal-info {
+    background: var(--branco-card); border: 1.5px solid var(--rosa-banner);
+    border-radius: 14px; padding: 6px 16px; margin-bottom: 16px;
+  }
+  .modal-info-row { padding: 10px 0; border-bottom: 1px solid var(--rosa-nav); font-size: .9rem; line-height: 1.55; }
+  .modal-info-row:last-child { border-bottom: none; }
+  .modal-info-row .info-label {
+    display: block; font-size: .72rem; font-weight: 700; letter-spacing: .5px;
+    text-transform: uppercase; color: var(--marrom-base); margin-bottom: 2px;
+  }
+  .modal-info-row .info-label i { margin-right: 5px; }
+  .modal-info-row span.info-text { color: var(--texto-medio); }
+  .modal-desc { color: var(--texto-medio); line-height: 1.7; margin-bottom: 16px; font-size: .94rem; }
+  .modal-detail { font-size: .87rem; color: var(--texto-medio); margin-bottom: 9px; display: flex; gap: 9px; align-items: flex-start; }
+  .modal-detail i { color: var(--marrom-base); margin-top: 2px; flex-shrink: 0; width: 16px; }
+
+  /* ====== WHATSAPP FLOAT ====== */
+  .whatsapp-float {
+    position: fixed; bottom: 24px; right: 24px; z-index: 500;
+    background: #25d366; color: #fff; border-radius: 50%;
+    width: 56px; height: 56px; font-size: 1.6rem;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 18px rgba(37,211,102,.4);
+    text-decoration: none;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  .whatsapp-float:hover { transform: scale(1.08); box-shadow: 0 6px 22px rgba(37,211,102,.55); }
+
+  /* ====== FOOTER ====== */
+  footer { background: var(--marrom-escuro); color: #f8d7da; padding: 50px 28px 24px; margin-top: 30px; }
+  .footer-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 36px;
+  }
+  .footer-brand { display: flex; align-items: flex-start; gap: 12px; }
+  .footer-brand .logo-mark { background: rgba(248,215,218,.15); }
+  .footer-brand h3 { font-family: 'Dancing Script', cursive; font-size: 1.8rem; color: #fff5f7; }
+  .footer-brand p { opacity: .8; line-height: 1.7; font-size: .88rem; margin-top: 6px; }
+  .footer-links h4, .footer-contact h4, .footer-social h4 {
+    color: var(--rosa-banner); font-size: .9rem; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 16px;
+  }
+  .footer-links a, .footer-contact span {
+    display: block; color: rgba(248,215,218,.75); text-decoration: none;
+    font-size: .87rem; margin-bottom: 9px; transition: color var(--transition);
+  }
+  .footer-links a:hover { color: var(--rosa-banner); }
+  .social-icons { display: flex; gap: 12px; }
+  .soc-icon {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: rgba(248,215,218,.12); color: var(--rosa-banner);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.05rem; text-decoration: none;
+    transition: background var(--transition);
+  }
+  .soc-icon:hover { background: var(--marrom-base); }
+  .footer-bottom {
+    max-width: 1240px; margin: 30px auto 0;
+    border-top: 1px solid rgba(248,215,218,.15);
+    padding-top: 20px; text-align: center;
+    font-size: .8rem; opacity: .6;
+  }
+  .footer-bottom a { color: rgba(248,215,218,.8); text-decoration: underline; }
+
+  /* ====== TOAST ====== */
+  .toast {
+    position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px);
+    background: var(--marrom-base); color: #fff5f7;
+    padding: 12px 24px; border-radius: 30px;
+    font-weight: 700; font-size: .9rem; z-index: 9999;
+    opacity: 0; transition: all .4s; pointer-events: none;
+    display: flex; align-items: center; gap: 8px;
+    white-space: nowrap; box-shadow: 0 6px 20px rgba(0,0,0,.18);
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+  /* ====== CHECKOUT SUCCESS ====== */
+  .success-screen { text-align: center; padding: 30px 10px 10px; }
+  .success-icon { font-size: 3.4rem; margin-bottom: 14px; display: block; color: #3aa76d; }
+  .success-screen h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--marrom-escuro); margin-bottom: 10px; }
+  .success-screen p { color: var(--texto-medio); margin-bottom: 6px; font-size: .92rem; }
+
+  /* ====== COOKIE BANNER ====== */
+  .cookie-banner {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 5000;
+    background: var(--marrom-escuro); color: #fff5f7;
+    padding: 18px 28px; box-shadow: 0 -4px 20px rgba(0,0,0,.2);
+    transform: translateY(110%); transition: transform .4s cubic-bezier(.4,0,.2,1);
+  }
+  .cookie-banner.show { transform: translateY(0); }
+  .cookie-inner {
+    max-width: 1100px; margin: 0 auto; display: flex; align-items: center;
+    gap: 20px; flex-wrap: wrap; justify-content: space-between;
+  }
+  .cookie-text { flex: 1; min-width: 240px; font-size: .88rem; line-height: 1.6; opacity: .92; }
+  .cookie-text a { color: var(--rosa-banner); text-decoration: underline; }
+  .cookie-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .btn-cookie-accept {
+    background: var(--rosa-banner); color: var(--marrom-escuro); border: none;
+    padding: 10px 22px; border-radius: 30px; font-weight: 700; font-size: .85rem;
+    cursor: pointer; transition: transform var(--transition);
+  }
+  .btn-cookie-accept:hover { transform: translateY(-2px); }
+  .btn-cookie-reject {
+    background: transparent; color: #fff5f7; border: 2px solid rgba(255,255,255,.35);
+    padding: 8px 20px; border-radius: 30px; font-weight: 700; font-size: .85rem; cursor: pointer;
+    transition: border-color var(--transition);
+  }
+  .btn-cookie-reject:hover { border-color: #fff5f7; }
+
+  /* ====== LEGAL PAGES ====== */
+  .legal-content { max-width: 820px; margin: 0 auto; }
+  .legal-content h2.section-title { margin-bottom: 6px; }
+  .legal-updated { color: var(--texto-medio); font-size: .85rem; margin-bottom: 30px; }
+  .legal-content h3 {
+    font-family: 'Playfair Display', serif; color: var(--marrom-escuro);
+    font-size: 1.15rem; margin: 26px 0 10px;
+  }
+  .legal-content p, .legal-content li { color: var(--texto-medio); line-height: 1.75; font-size: .94rem; }
+  .legal-content ul { padding-left: 22px; margin-bottom: 10px; }
+  .legal-content li { margin-bottom: 6px; }
+
+  /* ====== RESPONSIVO ====== */
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-art { order: -1; max-width: 320px; margin: 0 auto; }
+    .benefits { grid-template-columns: repeat(2,1fr); }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-testimonials-grid { grid-template-columns: 1fr; }
+    .about-art { min-height: 200px; }
+  }
+  @media (max-width: 768px) {
+    nav { display: none; }
+    nav.open {
+      display: flex; flex-direction: column;
+      position: absolute; top: 64px; left: 0; right: 0;
+      background: var(--branco-card); padding: 14px;
+      box-shadow: 0 8px 20px var(--sombra); z-index: 999;
+      max-height: calc(100vh - 64px); overflow-y: auto;
+    }
+    nav.open a {
+      color: var(--marrom-escuro); padding: 16px 18px; border-radius: 12px;
+      font-size: 1.05rem;
+    }
+    nav.open a:hover { background: var(--rosa-nav); }
+    nav.open a.active { background: var(--marrom-base); color: #fff5f7; }
+    .hamburger { display: block; }
+    .benefits { grid-template-columns: 1fr; }
+    .newsletter-form { flex-direction: column; }
+    .newsletter-form input { min-width: 100%; }
+    header { position: relative; }
+    .header-inner { padding: 12px 18px; }
+    .logo { font-size: 1.7rem; gap: 8px; }
+    .logo-mark { width: 38px; height: 38px; font-size: 1.15rem; }
+    .logo-text small { font-size: .56rem; letter-spacing: 1.8px; }
+    .section { padding: 44px 20px; }
+    .hero { padding: 40px 20px 56px; }
+    .about-copy { padding: 28px 22px; }
+    .about-copy h2 { font-size: 1.45rem; }
+    .testimonials-panel { padding: 26px 22px; }
+    .newsletter-section { padding: 34px 22px; }
+    .contact-form-wrap { padding: 22px 18px; }
+    .cookie-inner { flex-direction: column; align-items: stretch; text-align: center; }
+    .cookie-actions { justify-content: center; }
+    .modal-scroll { padding: 24px 20px 14px; }
+    .modal-fixed { padding: 12px 20px 18px; }
+    .cart-sidebar { width: 100vw; right: -100vw; }
+    .cart-head { padding: 16px 18px; }
+    .cart-body { padding: 16px; }
+    .cart-footer { padding: 16px 18px; }
+  }
+  @media (max-width: 480px) {
+    html { font-size: 15.5px; }
+    .header-inner { padding: 10px 14px; }
+    .logo { font-size: 1.4rem; }
+    .logo-mark { width: 34px; height: 34px; font-size: 1rem; }
+    .logo-text small { display: none; }
+    .icon-btn { padding: 8px; font-size: 1.1rem; }
+    .hero { padding: 32px 16px 46px; }
+    .hero-btns { gap: 10px; }
+    .btn-primary, .btn-secondary { padding: 12px 22px; font-size: .92rem; width: 100%; justify-content: center; }
+    .hero-btns { flex-direction: column; }
+    .benefits-wrap { padding: 0 16px; margin-top: -22px; }
+    .benefits { padding: 20px 16px; gap: 16px; border-radius: 18px; }
+    .benefit-icon { width: 42px; height: 42px; font-size: 1.05rem; }
+    .section { padding: 34px 16px; }
+    .section-title { font-size: 1.5rem; }
+    .section-head { gap: 14px; }
+    .link-all { width: 100%; justify-content: center; }
+    .products-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .card-body { padding: 12px 12px 14px; }
+    .card-name { font-size: .92rem; }
+    .card-desc { font-size: .78rem; -webkit-line-clamp: 2; display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-prices { padding: 8px 10px; }
+    .price-line { font-size: .74rem; }
+    .card-price { font-size: .98rem; }
+    .card-badge { font-size: .6rem; padding: 3px 9px; }
+    .card-footer { flex-direction: column; align-items: stretch; gap: 8px; }
+    .btn-add { justify-content: center; width: 100%; }
+    .about-art { padding: 22px; min-height: 150px; }
+    .about-art.has-photo { padding: 0; }
+    .about-art svg { width: 50%; }
+    .about-copy { padding: 24px 18px; }
+    .about-copy .script-line { font-size: 1.35rem; }
+    .about-copy h2 { font-size: 1.3rem; }
+    .testimonials-panel { padding: 22px 16px; }
+    .newsletter-section { padding: 28px 16px; border-radius: 18px; }
+    .newsletter-section h2 { font-size: 1.35rem; }
+    .contact-form-wrap { padding: 18px 14px; }
+    .contact-card { padding: 18px; gap: 12px; }
+    .modal { border-radius: 18px; }
+    .modal-scroll { padding: 20px 16px 12px; }
+    .modal-fixed { padding: 10px 16px 14px; }
+    .modal-emoji { width: 72px; height: 72px; }
+    .modal h2 { font-size: 1.3rem; }
+    .cart-head h3 { font-size: 1.15rem; }
+    .cart-item { padding: 10px; gap: 10px; }
+    .cart-item-emoji { width: 36px; height: 36px; font-size: 1.35rem; }
+    .footer-inner { gap: 26px; }
+    footer { padding: 36px 18px 20px; }
+    .whatsapp-float { width: 50px; height: 50px; font-size: 1.4rem; bottom: 18px; right: 18px; }
+    .toast { max-width: calc(100vw - 32px); white-space: normal; text-align: center; bottom: 78px; }
+    .cookie-banner { padding: 16px 18px; }
+    .payment-methods { gap: 6px; }
+    .pay-btn { font-size: .78rem; padding: 10px 6px; min-width: 0; }
+  }
+
+  /* ====== PAGE SECTIONS VISIBILITY ====== */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ====== ACESSIBILIDADE: FOCO VISÍVEL ====== */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+    outline: 3px solid var(--marrom-base); outline-offset: 2px;
+  }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo" onclick="showPage('home');return false;">
+      <span class="logo-mark logo-img"><img src="logo.jpg" alt="Logo Bilisca Doces" onerror="this.parentNode.classList.remove('logo-img');this.parentNode.innerHTML='<i class=&quot;fas fa-cake-candles&quot; aria-hidden=&quot;true&quot;></i>'"></span>
+      <span class="logo-text">Bilisca Doces<small>DOCES CASEIROS</small></span>
+    </a>
+    <nav id="mainNav" aria-label="Navegação principal">
+      <a href="#" onclick="showPage('home');return false;" class="active" id="nav-home">Início</a>
+      <a href="#" onclick="showPage('produtos');return false;" id="nav-produtos">Produtos</a>
+      <a href="#" onclick="showPage('sobre');return false;" id="nav-sobre">Sobre nós</a>
+      <a href="#" onclick="showPage('home', 'depoimentos');return false;" id="nav-depoimentos">Depoimentos</a>
+      <a href="#" onclick="showPage('contato');return false;" id="nav-contato">Contato</a>
+    </nav>
+    <div class="header-icons">
+      <button class="icon-btn" onclick="openCart()" title="Carrinho" aria-label="Abrir carrinho de compras">
+        <i class="fas fa-shopping-basket" aria-hidden="true"></i>
+        <span class="cart-badge" id="cartBadge" aria-label="Itens no carrinho">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Abrir menu de navegação" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ====== PAGE: HOME ====== -->
+<div class="page active" id="page-home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>Doces feitos <span class="script">com amor,</span><br>para adoçar seu dia!</h1>
+        <p>Doces caseiros feitos com ingredientes selecionados e muito carinho em cada detalhe, com as receitas da cozinha goiana.</p>
+        <div class="hero-btns">
+          <a href="#" class="btn-primary" onclick="showPage('produtos');return false;">
+            Ver produtos <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+          <a href="#" class="btn-secondary" onclick="showPage('sobre');return false;">
+            Saiba mais
+          </a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-art-frame"></div>
+        <svg viewBox="0 0 200 200" fill="none" stroke="var(--marrom-base)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Ilustração de um cupcake com um coração no topo">
+          <path d="M58 100 L68 178 Q100 188 132 178 L142 100 Z"/>
+          <path d="M64 122 L70 172" stroke-width="2" opacity=".45"/>
+          <path d="M100 112 L100 180" stroke-width="2" opacity=".45"/>
+          <path d="M136 122 L130 172" stroke-width="2" opacity=".45"/>
+          <path d="M52 100 Q60 78 78 84 Q82 62 100 68 Q118 62 122 84 Q140 78 148 100 Q150 110 140 112 Q160 100 100 90 Q40 100 60 112 Q50 110 52 100 Z"/>
+          <path d="M92 50 Q100 36 108 50 Q116 36 124 50 Q124 62 100 76 Q76 62 76 50 Q84 36 92 50 Z" stroke-width="2.5"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <div class="benefits-wrap">
+    <div class="benefits">
+      <div class="benefit">
+        <div class="benefit-icon"><i class="fas fa-award" aria-hidden="true"></i></div>
+        <div>
+          <h4>Ingredientes de qualidade</h4>
+          <p>Selecionamos o melhor para nossos doces.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><i class="fas fa-heart" aria-hidden="true"></i></div>
+        <div>
+          <h4>Feito com amor</h4>
+          <p>Cada receita é preparada com carinho.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><i class="fas fa-store" aria-hidden="true"></i></div>
+        <div>
+          <h4>Retirada no local</h4>
+          <p>Combine o dia e horário pelo WhatsApp.</p>
+        </div>
+      </div>
+      <div class="benefit">
+        <div class="benefit-icon"><i class="fas fa-shield-heart" aria-hidden="true"></i></div>
+        <div>
+          <h4>Compra 100% segura</h4>
+          <p>Seus dados protegidos, sempre.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOSSOS DOCES -->
+  <div class="section">
+    <div class="section-head">
+      <h2 class="section-title">Nossos doces <i class="fas fa-heart" aria-hidden="true"></i></h2>
+      <a href="#" class="link-all" onclick="showPage('produtos');return false;">Ver todos os produtos <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+    <div class="products-grid" id="homeGrid"></div>
+  </div>
+
+  <!-- SOBRE + DEPOIMENTOS -->
+  <div class="section" id="depoimentos">
+    <div class="about-testimonials-grid">
+      <div class="about-grid">
+        <div class="about-art has-photo">
+          <img src="lica3.jpg" alt="Momentos especiais da Bilisca Doces">
+        </div>
+        <div class="about-copy">
+          <div class="script-line">Mais que doces,</div>
+          <h2>momentos especiais!</h2>
+          <p>Aqui, cada doce carrega histórias, memórias e muito carinho. Nosso propósito é transformar ingredientes simples em momentos inesquecíveis para você e quem você ama.</p>
+        </div>
+      </div>
+
+      <div class="testimonials-panel">
+        <h3 class="section-title">O que dizem nossos clientes</h3>
+        <div class="testimonial-card">
+          <div class="t-quote-mark" aria-hidden="true">"</div>
+          <p class="t-text">O cajuzinho é maravilhoso e muito bem feito, me lembra o que minha avó fazia!</p>
+          <div class="t-header">
+            <div class="t-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+            <div>
+              <div class="t-name">Nicolly Dias</div>
+              <div class="t-stars" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="t-quote-mark" aria-hidden="true">"</div>
+          <p class="t-text">Comprei alguns doces e não me arrependo, o atendimento é excelente e dá pra ver o carinho que a Dona Lica tem pela cozinha!</p>
+          <div class="t-header">
+            <div class="t-avatar"><i class="fas fa-user" aria-hidden="true"></i></div>
+            <div>
+              <div class="t-name">Natanael S.M</div>
+              <div class="t-stars" aria-label="Avaliação: 5 de 5 estrelas">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWSLETTER -->
+  <div class="section">
+    <div class="newsletter-section">
+      <div class="nl-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+      <h2>Avisos exclusivos e promoções</h2>
+      <p>Inscreva-se para ficar por dentro dos doces que estão sendo produzidos.</p>
+      <div class="newsletter-form">
+        <label for="newsletterEmail" class="sr-only">Seu e-mail</label>
+        <input type="email" placeholder="Seu melhor e-mail" id="newsletterEmail" aria-describedby="newsletterError">
+        <button class="btn-primary" onclick="subscribeNewsletter()">
+          Quero receber
+        </button>
+      </div>
+      <div class="field-error" id="newsletterError" role="alert">
+        <i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ====== PAGE: PRODUTOS ====== -->
+<div class="page" id="page-produtos">
+  <div class="section">
+    <h2 class="section-title" style="margin-top:20px">Nosso catálogo <i class="fas fa-cookie-bite" aria-hidden="true"></i></h2>
+    <p style="color:var(--texto-medio); margin-bottom: 26px">Artesanal, com amor e sabor de Goiás</p>
+
+    <div class="categories" id="categorias" role="group" aria-label="Filtrar por categoria">
+      <button class="cat-btn active" onclick="filterCategory('todos', this)">Todos os doces</button>
+      <button class="cat-btn" onclick="filterCategory('unidade', this)">Por unidade / bandeja</button>
+      <button class="cat-btn" onclick="filterCategory('peso', this)">Por peso / bandeja</button>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</div>
+
+<!-- ====== PAGE: SOBRE ====== -->
+<div class="page" id="page-sobre">
+  <div class="section" style="margin-top:30px">
+    <div class="about-grid" style="grid-template-columns: 1fr 1.2fr">
+      <div class="about-art has-photo">
+        <img src="lica.jpg" alt="Dona Lica, a doceira da Bilisca Doces">
+      </div>
+      <div class="about-copy">
+        <div class="script-line">A história da</div>
+        <h2>Dona Lica</h2>
+        <p style="margin-bottom:14px">Tudo começou em 2010, com um pedido despretensioso da Anaulta, minha cunhada, que já levava a essência da roça para os shoppings de Goiânia: ela me pediu alguns doces para vender. Eu era dona de casa, não tinha renda própria, e aquela proposta, cheia de incertezas, acendeu em mim uma faísca de esperança. Resolvi testar.</p>
+        <p style="border-left:4px solid var(--rosa-banner); padding-left:16px; font-style:italic; color:var(--marrom-base); margin-bottom:14px">O que começou como um teste se tornou a virada de chave que eu precisava para conquistar a minha independência financeira.</p>
+        <p style="margin-bottom:14px">Deu tão certo que, na semana seguinte, ela pediu mais e sugeriu novas receitas. Quando nossa cidade criou a Feira Verde, nas noites de sexta, vi ali a chance de fincar raízes. Foi então que nasceu o nome <strong>Bilisca Doces</strong>: uma mistura da minha filha Bia com o meu apelido, Lica, e do meu hábito gostoso de &ldquo;beliscar&rdquo; uma comidinha na cozinha.</p>
+        <p style="margin-bottom:14px">Com o tempo vieram as encomendas de aniversário e o negócio virou coisa de família. Eu comando as panelas, com o pai da Bia como meu braço direito na produção. A Bia cuida das vendas online, das redes sociais e do dinheiro, porque o mundo digital ainda me assusta um pouquinho. Por oito anos, a feira de domingo foi sagrada: às 5 da manhã já estávamos de pé montando a barraca.</p>
+        <p>Em 2024 veio a aposentadoria e deixamos as feiras semanais. Hoje produzo com mais calma, a cada quinze dias, além de pequenas encomendas para festas. A correria diminuiu, mas o amor pelo cozinhar continua o mesmo: transformei a incerteza do passado num legado de doçura e união para a minha família.</p>
+        <div style="display:flex; gap:30px; margin-top:22px; flex-wrap:wrap">
+          <div>
+            <div style="font-size:1.8rem;color:var(--marrom-base);font-weight:700">2010</div>
+            <div style="font-size:.82rem;color:var(--texto-medio)">Ano em que tudo começou</div>
+          </div>
+          <div>
+            <div style="font-size:1.8rem;color:var(--marrom-base);font-weight:700">8 anos</div>
+            <div style="font-size:.82rem;color:var(--texto-medio)">De feira aos domingos</div>
+          </div>
+          <div>
+            <div style="font-size:1.8rem;color:var(--marrom-base);font-weight:700">16+</div>
+            <div style="font-size:.82rem;color:var(--texto-medio)">Anos de receitas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:30px;background:var(--branco-card);border-radius:24px;padding:32px;border:1.5px solid var(--rosa-banner);box-shadow:0 4px 18px var(--sombra)">
+      <h2 class="section-title" style="margin-bottom:16px">Onde estamos <i class="fas fa-location-dot" aria-hidden="true"></i></h2>
+      <p style="color:var(--texto-medio);margin-bottom:20px">Atendemos e vendemos para retirada em Bela Vista de Goiás e região. Não realizamos entregas.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:8px;color:var(--texto-medio);font-size:.9rem">
+          <i class="fas fa-clock" style="color:var(--marrom-base)" aria-hidden="true"></i> Seg–Sáb: 8h às 18h
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--texto-medio);font-size:.9rem">
+          <i class="fas fa-store" style="color:var(--marrom-base)" aria-hidden="true"></i> Somente retirada no local
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;color:var(--texto-medio);font-size:.9rem">
+          <i class="fab fa-whatsapp" style="color:#25d366" aria-hidden="true"></i> (62) 99918-9033
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PAGE: CONTATO ====== -->
+<div class="page" id="page-contato">
+  <div class="section" style="margin-top:30px; max-width: 760px">
+    <h2 class="section-title">Fale com a gente <i class="fas fa-envelope" aria-hidden="true"></i></h2>
+    <p style="color:var(--texto-medio); margin-bottom:30px">Atendimento humanizado, com o carinho de sempre</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fab fa-whatsapp" style="color:#25d366" aria-hidden="true"></i></div>
+        <div>
+          <h4>WhatsApp</h4>
+          <span>(62) 99918-9033</span>
+          <span>Atendimento rápido e humanizado</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
+        <div>
+          <h4>E-mail</h4>
+          <span>biliscadoces@gmail.com</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+        <div>
+          <h4>Horário de atendimento</h4>
+          <span>Seg – Sáb: 8h às 18h</span>
+          <span>Retirada no local (sem entregas)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <h3>Envie uma mensagem</h3>
+      <form id="contactForm" onsubmit="submitContactForm(event)" novalidate>
+        <div class="form-grid-2">
+          <div class="form-row">
+            <label for="contactName">Nome completo</label>
+            <input type="text" id="contactName" name="nome" autocomplete="name" required aria-describedby="contactNameError">
+            <div class="field-error" id="contactNameError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+          </div>
+          <div class="form-row">
+            <label for="contactPhone">Telefone / WhatsApp</label>
+            <input type="tel" id="contactPhone" name="telefone" autocomplete="tel" placeholder="(62) 9 9999-0000" required aria-describedby="contactPhoneError">
+            <div class="field-error" id="contactPhoneError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="contactEmail">E-mail</label>
+          <input type="email" id="contactEmail" name="email" autocomplete="email" required aria-describedby="contactEmailError">
+          <div class="field-error" id="contactEmailError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+        </div>
+        <div class="form-row">
+          <label for="contactSubject">Assunto</label>
+          <select id="contactSubject" name="assunto">
+            <option value="duvida">Dúvida sobre produtos</option>
+            <option value="encomenda">Encomenda especial</option>
+            <option value="elogio">Elogio</option>
+            <option value="reclamacao">Reclamação</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="contactMessage">Mensagem</label>
+          <textarea id="contactMessage" name="mensagem" required aria-describedby="contactMessageError" placeholder="Escreva sua mensagem..."></textarea>
+          <div class="field-error" id="contactMessageError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+        </div>
+        <button type="submit" class="btn-primary" style="justify-content:center;width:100%">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar mensagem
+        </button>
+      </form>
+    </div>
+
+    <a href="https://wa.me/5562999189033" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;text-decoration:none;margin-top:24px;width:100%">
+      <i class="fab fa-whatsapp" aria-hidden="true"></i> Chamar no WhatsApp agora
+    </a>
+  </div>
+</div>
+
+<!-- ====== PAGE: POLÍTICA DE PRIVACIDADE ====== -->
+<div class="page" id="page-privacidade">
+  <div class="section" style="margin-top:30px">
+    <div class="legal-content">
+      <h2 class="section-title">Política de Privacidade <i class="fas fa-shield-heart" aria-hidden="true"></i></h2>
+      <p class="legal-updated">Última atualização: agosto de 2026</p>
+
+      <p>A Doceria da Bia leva a sua privacidade a sério. Explicamos abaixo como tratamos as informações inseridas por quem utiliza este site, em conformidade com os princípios da Lei Geral de Proteção de Dados (LGPD – Lei nº 13.709/2018).</p>
+
+      <h3>1. Quais dados coletamos</h3>
+      <ul>
+        <li>Dados de contato: nome, telefone e e-mail informados no formulário de contato ou na finalização do pedido.</li>
+        <li>Dados do pedido: itens escolhidos, observações e forma de pagamento escolhida (o pagamento é feito na retirada; não coletamos dados de cartão).</li>
+        <li>Preferência de cookies: se você aceitou ou recusou cookies neste navegador.</li>
+      </ul>
+
+      <h3>2. Como usamos os dados</h3>
+      <p>Os dados informados são usados para processar seu pedido, entrar em contato sobre a retirada e responder mensagens enviadas pelo formulário de contato. Nenhum dado é vendido ou compartilhado com terceiros para fins comerciais.</p>
+
+      <h3>3. Armazenamento</h3>
+      <p>O carrinho e as preferências de cookies ficam salvos apenas no armazenamento local do seu próprio navegador (localStorage), para que você não perca seus itens ao navegar pelo site. Nenhuma informação é enviada a servidores externos.</p>
+
+      <h3>4. Seus direitos</h3>
+      <ul>
+        <li>Acessar os dados que você mesmo inseriu no site.</li>
+        <li>Solicitar a exclusão desses dados, limpando o armazenamento do navegador ou pelo contato informado.</li>
+        <li>Recusar o uso de cookies não essenciais a qualquer momento pelo banner de cookies.</li>
+      </ul>
+
+      <h3>5. Contato</h3>
+      <p>Dúvidas sobre esta política podem ser enviadas para contato@doceriadabia.com.br.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PAGE: TERMOS DE USO ====== -->
+<div class="page" id="page-termos">
+  <div class="section" style="margin-top:30px">
+    <div class="legal-content">
+      <h2 class="section-title">Termos de Uso <i class="fas fa-file-contract" aria-hidden="true"></i></h2>
+      <p class="legal-updated">Última atualização: agosto de 2026</p>
+
+      <h3>1. Sobre este site</h3>
+      <p>Este site apresenta o catálogo de doces da Doceria da Bia, com informações sobre produtos, preços e retirada no local.</p>
+
+      <h3>2. Uso do site</h3>
+      <ul>
+        <li>Ao usar este site, você concorda em fornecer informações verdadeiras nos formulários disponíveis.</li>
+        <li>Os pedidos feitos pelo site são confirmados diretamente com a cliente para combinar data e horário de retirada.</li>
+        <li>Não realizamos entregas: todos os pedidos são para retirada no local.</li>
+      </ul>
+
+      <h3>3. Propriedade e conteúdo</h3>
+      <p>Textos, identidade visual e ilustrações deste site pertencem à Doceria da Bia e podem ser reutilizados apenas com autorização.</p>
+
+      <h3>4. Limitação de responsabilidade</h3>
+      <p>A Doceria da Bia se compromete a manter as informações de catálogo e preços atualizadas, mas eventuais alterações de disponibilidade serão sempre confirmadas diretamente com a cliente antes da retirada.</p>
+
+      <h3>5. Alterações</h3>
+      <p>Estes termos podem ser atualizados a qualquer momento para refletir ajustes no funcionamento da loja.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====== PAGE: 404 ====== -->
+<div class="page" id="page-404">
+  <div class="section" style="margin-top:40px; text-align:center">
+    <div style="font-size:5rem; margin-bottom: 10px; color: var(--rosa-banner)"><i class="fas fa-heart-crack" aria-hidden="true"></i></div>
+    <h2 class="section-title" style="justify-content:center; margin-bottom: 10px">Página não encontrada (404)</h2>
+    <p style="color:var(--texto-medio); max-width:460px; margin:0 auto 26px">
+      Ops! Parece que esse doce não está na nossa vitrine. A página que você procurou não existe ou foi movida.
+    </p>
+    <a href="#" class="btn-primary" onclick="showPage('home');return false;" style="text-decoration:none">
+      <i class="fas fa-house" aria-hidden="true"></i> Voltar para o início
+    </a>
+  </div>
+</div>
+
+<!-- ====== CART SIDEBAR ====== -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-sidebar" id="cartSidebar" role="dialog" aria-label="Carrinho de compras" aria-hidden="true">
+  <div class="cart-head">
+    <h3 id="cartHeadTitle">Meu carrinho</h3>
+    <button class="cart-close" onclick="closeCart()" aria-label="Fechar carrinho">✕</button>
+  </div>
+  <div class="cart-body" id="cartBody">
+    <div class="cart-empty" id="cartEmpty">
+      <i class="fas fa-basket-shopping" aria-hidden="true"></i>
+      <p>Seu carrinho está vazio.</p>
+      <p style="font-size:.85rem;margin-top:6px">Adicione doces fresquinhos!</p>
+    </div>
+    <div id="cartItems"></div>
+    <div class="pickup-info" id="pickupInfo" style="display:none">
+      <i class="fas fa-store" aria-hidden="true"></i>
+      <div>
+        <strong>Retirada no local (sem entregas)</strong><br>
+        <span style="font-size:.8rem">Combinaremos o horário pelo WhatsApp após a confirmação</span>
+      </div>
+    </div>
+    <div class="cart-comment" id="cartComment" style="display:none">
+      <label><i class="fas fa-comment-alt" aria-hidden="true"></i> Observações do pedido</label>
+      <textarea rows="3" placeholder="Ex: embrulhar para presente, escrever mensagem no cartão..." id="orderComment"></textarea>
+    </div>
+    <div class="checkout-form" id="checkoutForm" style="display:none">
+      <h4><i class="fas fa-user" aria-hidden="true"></i> Seus dados para retirada</h4>
+      <div class="form-row">
+        <label for="checkoutName">Nome completo</label>
+        <input type="text" id="checkoutName" autocomplete="name" required aria-describedby="checkoutNameError">
+        <div class="field-error" id="checkoutNameError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+      </div>
+      <div class="form-row">
+        <label for="checkoutPhone">Telefone / WhatsApp</label>
+        <input type="tel" id="checkoutPhone" autocomplete="tel" placeholder="(62) 9 9999-0000" required aria-describedby="checkoutPhoneError">
+        <div class="field-error" id="checkoutPhoneError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+      </div>
+      <div class="form-row">
+        <label for="checkoutEmail">E-mail</label>
+        <input type="email" id="checkoutEmail" autocomplete="email" required aria-describedby="checkoutEmailError">
+        <div class="field-error" id="checkoutEmailError" role="alert"><i class="fas fa-circle-exclamation" aria-hidden="true"></i> <span></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="cart-body pay-step" id="payStep" style="display:none"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none"></div>
+</div>
+
+<!-- MODAL PRODUTO -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="productModal" role="dialog" aria-label="Detalhes do produto">
+    <button class="modal-close" onclick="closeModalBtn()" aria-label="Fechar detalhes do produto">✕</button>
+    <div class="modal-scroll">
+    <img class="modal-emoji" id="modalEmoji" src="" alt="" role="button" tabindex="0" title="Clique para ver em tela cheia" onclick="openLightbox()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openLightbox();}" onerror="this.style.display='none';document.getElementById('modalZoomHint').style.display='none'">
+    <div class="modal-zoom-hint" id="modalZoomHint"><i class="fas fa-magnifying-glass-plus" aria-hidden="true"></i>Clique na foto para ampliar</div>
+    <div id="modalRank"></div>
+    <h2 id="modalName"></h2>
+    <div class="card-rating" id="modalRating"></div>
+    <p class="modal-desc" id="modalDesc"></p>
+    <div class="modal-info" id="modalInfo"></div>
+    </div>
+    <div class="modal-fixed">
+    <div class="modal-prices" id="modalPrices"></div>
+    <div style="margin-top:12px">
+      <button class="btn-add" style="width:100%;justify-content:center;padding:14px" onclick="addFromModal()">
+        <i class="fas fa-cart-plus" aria-hidden="true"></i> <span id="modalBuyLabel"></span>
+      </button>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOTO EM TELA CHEIA -->
+<div class="lightbox" id="lightbox" role="dialog" aria-label="Foto do doce em tela cheia" aria-hidden="true" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Fechar foto em tela cheia">✕</button>
+  <img id="lightboxImg" src="" alt="" onclick="event.stopPropagation()">
+  <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5562999189033" class="whatsapp-float" target="_blank" rel="noopener" title="Fale conosco no WhatsApp" aria-label="Fale conosco no WhatsApp">
+  <i class="fab fa-whatsapp" aria-hidden="true"></i>
+</a>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Aviso de cookies">
+  <div class="cookie-inner">
+    <div class="cookie-text">
+      <i class="fas fa-cookie-bite" aria-hidden="true"></i>
+      Usamos cookies e armazenamento local apenas para lembrar seu carrinho e melhorar sua experiência neste site. Veja nossa <a href="#" onclick="showPage('privacidade');return false;">Política de Privacidade</a>.
+    </div>
+    <div class="cookie-actions">
+      <button class="btn-cookie-reject" onclick="handleCookieChoice(false)">Recusar não essenciais</button>
+      <button class="btn-cookie-accept" onclick="handleCookieChoice(true)">Aceitar todos</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark"><i class="fas fa-cake-candles" aria-hidden="true"></i></span>
+      <div>
+        <h3>Bilisca</h3>
+        <p>Doces artesanais feitos com as receitas da Dona Maria Piedade, mais conhecida comoLica. Cada mordida é um abraço da cozinha goiana para você.</p>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Links rápidos</h4>
+      <a href="#" onclick="showPage('home');return false;">Início</a>
+      <a href="#" onclick="showPage('produtos');return false;">Produtos</a>
+      <a href="#" onclick="showPage('sobre');return false;">Sobre nós</a>
+      <a href="#" onclick="showPage('contato');return false;">Contato</a>
+      <a href="#" onclick="showPage('privacidade');return false;">Política de Privacidade</a>
+      <a href="#" onclick="showPage('termos');return false;">Termos de Uso</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contato</h4>
+      <span><i class="fab fa-whatsapp" style="color:#25d366;margin-right:6px" aria-hidden="true"></i>(62) 99918-9033</span>
+      <span><i class="fas fa-envelope" style="margin-right:6px;color:var(--rosa-banner)" aria-hidden="true"></i>biliscadoces@gmail.com</span>
+      <span><i class="fas fa-map-marker-alt" style="margin-right:6px;color:var(--rosa-banner)" aria-hidden="true"></i>Bela Vista de Goiás, GO</span>
+      <span><i class="fas fa-store" style="margin-right:6px;color:var(--rosa-banner)" aria-hidden="true"></i>Somente retirada no local</span>
+    </div>
+    <div class="footer-social">
+      <h4>Siga-nos</h4>
+      <p style="font-size:.82rem; opacity:.75; margin-bottom:10px">Acompanhe nossas novidades no Instagram</p>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/biliscadoces/" target="_blank" rel="noopener" class="soc-icon" aria-label="Instagram @biliscadoces" title="@biliscadoces"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#" class="soc-icon" aria-label="Facebook (em breve)"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5562999189033" target="_blank" rel="noopener" class="soc-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+        <a href="#" class="soc-icon" aria-label="TikTok (em breve)"><i class="fab fa-tiktok" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Bilisca Doces · Todos os direitos reservados · Feito com <i class="fas fa-heart" aria-hidden="true" style="color:var(--rosa-banner)"></i> em Goiás ·
+    <a href="#" onclick="showPage('privacidade');return false;">Privacidade</a> ·
+    <a href="#" onclick="showPage('termos');return false;">Termos de Uso</a>
+  </div>
+</footer>
+
+<script>
+// ====== DADOS ======
+// Doces vendidos por unidade (com opção de bandeja fechada)
+const products = [
+  { id:1, name:'Cajuzinho', img:'ca', priceUn:1.00, priceBandeja:14.00, category:'unidade', badge:'Mais vendido', rank:1, desc:'O queridinho de sempre: doce de amendoim enrolado, macio e docinho na medida certa.', rating:5, reviews:38 },
+  { id:2, name:'Olho de Sogra', img:'ol', priceUn:1.16, priceBandeja:12.00, category:'unidade', badge:'Mais vendido', rank:2, desc:'Ameixa recheada com doce de coco, um clássico das festas de família.', rating:5, reviews:21 },
+  { id:3, name:'Palha Italiana', img:'pa', priceUn:0.87, priceBandeja:14.00, category:'unidade', badge:'', desc:'Brigadeiro cremoso com biscoito triturado, cortado em quadradinhos.' },
+  { id:4, name:'Beijinho de Coco', img:'be', priceUn:1.16, priceBandeja:14.00, category:'unidade', badge:'', desc:'Doce de leite condensado com coco ralado, enrolado e finalizado com açúcar.', rating:4, reviews:12 },
+  { id:5, name:'Doce de Banana', img:'do', priceUn:0.87, priceBandeja:14.00, category:'unidade', badge:'', desc:'Docinho de banana, sabor caseiro que lembra receita de família.' },
+  { id:6, name:'Ninho', img:'ni', priceUn:0.77, priceBandeja:7.00, category:'unidade', badge:'Mais vendido', rank:4, desc:'Doce de leite Ninho, cremoso e bem docinho.', rating:5, reviews:29 },
+  { id:7, name:'Cocada', img:'co', priceUn:1.16, priceBandeja:14.00, category:'unidade', badge:'Mais vendido', rank:5, desc:'Cocada caseira, com pedaços de coco fresco e ponto certo de doçura.', rating:4, reviews:9 },
+  // Doces vendidos por peso (bandeja)
+  { id:8, name:'Casca de Laranja Cristalizada', img:'cas', pricePeso:70.00, priceBandeja:14.00, category:'peso', badge:'', desc:'Casca de laranja cristalizada, doce tradicional feito devagar.' },
+  { id:9, name:'Abacaxi Cristalizado', img:'ab', pricePeso:70.00, priceBandeja:14.00, category:'peso', badge:'Mais vendido', rank:3, desc:'Abacaxi cristalizado, doce e levemente ácido, do jeito tradicional.', rating:5, reviews:16 },
+  { id:10, name:'Mamão Maduro', img:'ma', pricePeso:70.00, priceBandeja:14.00, category:'peso', badge:'', desc:'Doce de mamão maduro, macio e bem docinho.' },
+  { id:11, name:'Abóbora', img:'abo', pricePeso:70.00, priceBandeja:14.00, category:'peso', badge:'', desc:'Doce de abóbora, receita tradicional cozida com capricho.' },
+  { id:12, name:'Figo', img:'fi', pricePeso:70.00, priceBandeja:14.00, category:'peso', badge:'', desc:'Doce de figo em calda, um sabor mais raro de encontrar.' },
+];
+
+let cart = [];
+let currentProduct = null;
+let selectedPayment = 'pix';
+let activeCategory = 'todos';
+
+window.onload = () => {
+  renderProducts(products, 'homeGrid', true);
+  renderProducts(products, 'productsGrid');
+  loadCartFromStorage();
+  initCookieBanner();
+  routeFromHash();
+};
+
+window.addEventListener('hashchange', routeFromHash);
+
+// ====== NAVEGAÇÃO / ROTEAMENTO ======
+const validPages = ['home','produtos','sobre','contato','privacidade','termos'];
+
+function routeFromHash() {
+  const hash = (window.location.hash || '').replace('#', '').split('?')[0];
+  if (!hash) return;
+  if (validPages.includes(hash)) {
+    showPage(hash);
+  } else {
+    show404();
+  }
+}
+
+function show404() {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-404').classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function showPage(page, anchor) {
+  if (!validPages.includes(page)) { show404(); return; }
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const navId = anchor === 'depoimentos' ? 'nav-depoimentos' : 'nav-' + page;
+  const navEl = document.getElementById(navId);
+  if (navEl) navEl.classList.add('active');
+  document.getElementById('mainNav').classList.remove('open');
+  document.getElementById('hamburger').setAttribute('aria-expanded','false');
+
+  if (anchor) {
+    setTimeout(() => {
+      const el = document.getElementById(anchor);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 50);
+  } else {
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+  if (page === 'produtos') renderProducts(products, 'productsGrid');
+}
+
+function toggleNav() {
+  const nav = document.getElementById('mainNav');
+  nav.classList.toggle('open');
+  document.getElementById('hamburger').setAttribute('aria-expanded', nav.classList.contains('open') ? 'true' : 'false');
+}
+
+// ====== INFORMAÇÕES EXTRAS (aparecem ao abrir o modal) ======
+const productInfo = {
+  1:  { ingredientes:'Amendoim, leite condensado, manteiga e açúcar cristal para finalizar.',
+        sabor:'Macio, com sabor intenso de amendoim e docinho na medida certa.',
+        ideal:'Festas de aniversário, lanche da tarde e lembrancinhas.',
+        conservacao:'Mantenha em local fresco e seco, bem tampado. Consumir em até 5 dias.' },
+  2:  { ingredientes:'Ameixa seca, leite condensado, coco ralado e açúcar cristal.',
+        sabor:'Equilíbrio entre o doce cremoso do coco e o toque levemente azedinho da ameixa.',
+        ideal:'Festas de família, casamentos e mesas de doces tradicionais.',
+        conservacao:'Mantenha em local fresco e seco, bem tampado. Consumir em até 5 dias.' },
+  3:  { ingredientes:'Leite condensado, chocolate em pó, manteiga e biscoito maisena.',
+        sabor:'Brigadeiro cremoso com a textura crocante do biscoito triturado.',
+        ideal:'Sobremesa, festas infantis e quem ama chocolate.',
+        conservacao:'Conserve em local fresco ou na geladeira. Consumir em até 5 dias.' },
+  4:  { ingredientes:'Leite condensado, manteiga, coco ralado e açúcar cristal.',
+        sabor:'Suave, cremoso e com o frescor do coco ralado por fora.',
+        ideal:'Festas, cafés da tarde e presentes.',
+        conservacao:'Mantenha em local fresco e seco, bem tampado. Consumir em até 5 dias.' },
+  5:  { ingredientes:'Banana, açúcar e canela.',
+        sabor:'Doce caseiro com aroma e sabor de banana bem madura.',
+        ideal:'Lanche, sobremesa e para quem gosta de sabores tradicionais.',
+        conservacao:'Conserve em local fresco e seco. Consumir em até 7 dias.' },
+  6:  { ingredientes:'Leite em pó Ninho, leite condensado e manteiga.',
+        sabor:'Cremoso, suave e bem docinho, com sabor marcante de leite.',
+        ideal:'Festas, lembrancinhas e para agradar crianças e adultos.',
+        conservacao:'Mantenha em local fresco e seco, bem tampado. Consumir em até 5 dias.' },
+  7:  { ingredientes:'Coco fresco, açúcar e leite condensado.',
+        sabor:'Textura firme com pedaços de coco, doçura no ponto certo.',
+        ideal:'Sobremesa, lanche e festas juninas.',
+        conservacao:'Conserve em local fresco e seco. Consumir em até 7 dias.' },
+  8:  { ingredientes:'Casca de laranja e açúcar.',
+        sabor:'Doce com leve amargor cítrico, firme e aromático.',
+        ideal:'Cafés, sobremesas e para presentear.',
+        conservacao:'Guarde em pote bem fechado, em local fresco e seco. Dura cerca de 15 dias.' },
+  9:  { ingredientes:'Abacaxi e açúcar.',
+        sabor:'Doce, levemente ácido e com textura firme por fora e macia por dentro.',
+        ideal:'Lanche, café da tarde e para presentear.',
+        conservacao:'Guarde em pote bem fechado, em local fresco e seco. Dura cerca de 15 dias.' },
+  10: { ingredientes:'Mamão maduro e açúcar.',
+        sabor:'Macio, com sabor suave de mamão e bastante docinho.',
+        ideal:'Sobremesa, acompanhado de queijo ou como lanche.',
+        conservacao:'Guarde em pote bem fechado, na geladeira. Consumir em até 10 dias.' },
+  11: { ingredientes:'Abóbora e açúcar.',
+        sabor:'Textura macia e sabor caseiro, com o gosto adocicado da abóbora.',
+        ideal:'Sobremesa tradicional, com queijo ou café.',
+        conservacao:'Guarde em pote bem fechado, na geladeira. Consumir em até 10 dias.' },
+  12: { ingredientes:'Figo e açúcar.',
+        sabor:'Doce e aromático, com sabor marcante e textura macia.',
+        ideal:'Sobremesa especial e para quem gosta de sabores tradicionais.',
+        conservacao:'Guarde em pote bem fechado, na geladeira. Consumir em até 10 dias.' }
+};
+
+function infoHTML(p) {
+  const i = productInfo[p.id];
+  if (!i) return '';
+  const row = (icon, label, text) => text
+    ? `<div class="modal-info-row"><span class="info-label"><i class="fas ${icon}" aria-hidden="true"></i>${label}</span><span class="info-text">${text}</span></div>` : '';
+  return row('fa-wheat-awn','Ingredientes', i.ingredientes)
+       + row('fa-face-smile','Sabor e textura', i.sabor)
+       + row('fa-gift','Ideal para', i.ideal)
+       + row('fa-snowflake','Conservação', i.conservacao);
+}
+
+// ====== RENDER PRODUTOS ======
+function priceLines(p) {
+  if (p.category === 'unidade') {
+    return `
+      <div class="price-line"><span>Unidade</span><strong>R$ ${p.priceUn.toFixed(2).replace('.',',')}</strong></div>
+      <div class="price-line"><span>Bandeja</span><strong>R$ ${p.priceBandeja.toFixed(2).replace('.',',')}</strong></div>
+    `;
+  }
+  return `
+    <div class="price-line"><span>Por kg</span><strong>R$ ${p.pricePeso.toFixed(2).replace('.',',')}</strong></div>
+    <div class="price-line"><span>Bandeja</span><strong>R$ ${p.priceBandeja.toFixed(2).replace('.',',')}</strong></div>
+  `;
+}
+
+function ratingHTML(p) {
+  if (!p.rating) return '';
+  const full = '★'.repeat(p.rating) + '☆'.repeat(5 - p.rating);
+  return `<span class="stars" aria-hidden="true">${full}</span><span class="rating-count" aria-label="${p.rating} de 5 estrelas, ${p.reviews} avaliações">(${p.reviews})</span>`;
+}
+
+// Imagens ficam na mesma pasta do index.html: <img>.jpg
+function imgSrc(p) {
+  const prod = products.find(x => x.id === p.id) || p;
+  return `${prod.img}.jpg`;
+}
+
+function buyLabel(p) {
+  return 'Bandeja';
+}
+
+function buyPrice(p) {
+  return p.priceBandeja;
+}
+
+function cardHTML(p) {
+  return `
+    <div class="product-card" onclick="openModal(${p.id})" role="button" tabindex="0" aria-label="Ver detalhes de ${p.name}" onkeypress="if(event.key==='Enter')openModal(${p.id})">
+      <div class="card-img">
+        ${p.rank && p.rank <= 3 ? `<span class="card-badge top-seller rank-${p.rank}" title="${p.rank}º mais vendido"><span class="crown-emoji" aria-hidden="true">👑</span>${p.rank}º mais vendido</span>` : (p.badge ? `<span class="card-badge">${p.badge}</span>` : '')}
+        <img src="${imgSrc(p)}" alt="${p.name}" loading="lazy" onerror="this.style.display='none'">
+      </div>
+      <div class="card-body">
+        <div class="card-name">${p.name}</div>
+        <div class="card-rating">${ratingHTML(p)}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="card-prices">
+          ${priceLines(p)}
+        </div>
+        <div class="card-footer">
+          <div class="card-price">
+            R$ ${buyPrice(p).toFixed(2).replace('.',',')}
+            <small>${buyLabel(p)}</small>
+          </div>
+          <button class="btn-add" onclick="event.stopPropagation();addToCart(${p.id})" aria-label="Adicionar ${p.name} ao carrinho">
+            <i class="fas fa-plus" aria-hidden="true"></i> Adicionar
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderProducts(list, targetId, featuredOnly) {
+  const grid = document.getElementById(targetId);
+  if (!grid) return;
+
+  let filtered = list;
+  if (featuredOnly) {
+    filtered = [...list].sort((a,b) => (a.rank||99) - (b.rank||99)).slice(0, 4);
+  } else {
+    // Os 3 mais vendidos vêm primeiro, em ordem; os demais seguem a ordem original
+    const topRank = p => (p.rank && p.rank <= 3) ? p.rank : 99;
+    filtered = list
+      .filter(p => activeCategory === 'todos' || p.category === activeCategory)
+      .sort((a, b) => topRank(a) - topRank(b));
+  }
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;color:var(--texto-medio);padding:40px 0;font-size:1.05rem">Nenhum doce encontrado.</div>';
+    return;
+  }
+  grid.innerHTML = filtered.map(cardHTML).join('');
+}
+
+function filterCategory(cat, btn) {
+  activeCategory = cat;
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderProducts(products, 'productsGrid');
+}
+
+// ====== MODAL ======
+function openModal(id) {
+  const p = products.find(x => x.id === id);
+  currentProduct = p;
+  document.getElementById('modalEmoji').style.display = '';
+  document.getElementById('modalZoomHint').style.display = '';
+  document.getElementById('modalEmoji').src = imgSrc(p);
+  document.getElementById('modalEmoji').alt = p.name;
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalRank').innerHTML = (p.rank && p.rank <= 3)
+    ? `<span class="rank-crown rank-${p.rank}"><span aria-hidden="true">👑</span>${p.rank}º mais vendido</span>` : '';
+  document.getElementById('modalRating').innerHTML = ratingHTML(p);
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalInfo').innerHTML = infoHTML(p);
+  document.getElementById('modalPrices').innerHTML = priceLines(p);
+  document.getElementById('modalBuyLabel').textContent =
+    `Adicionar ${buyLabel(p).toLowerCase()} – R$ ${buyPrice(p).toFixed(2).replace('.',',')}`;
+  document.getElementById('modalOverlay').classList.add('open');
+  const sc = document.querySelector('#productModal .modal-scroll'); if (sc) sc.scrollTop = 0;
+}
+function closeModal(e) {
+  if (e.target === document.getElementById('modalOverlay'))
+    document.getElementById('modalOverlay').classList.remove('open');
+}
+function openLightbox() {
+  if (!currentProduct) return;
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = imgSrc(currentProduct);
+  img.alt = currentProduct.name;
+  document.getElementById('lightboxCaption').textContent = currentProduct.name;
+  lb.classList.add('open');
+  lb.setAttribute('aria-hidden','false');
+}
+function closeLightbox() {
+  const lb = document.getElementById('lightbox');
+  lb.classList.remove('open');
+  lb.setAttribute('aria-hidden','true');
+}
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  if (document.getElementById('lightbox').classList.contains('open')) closeLightbox();
+  else closeModalBtn();
+});
+function closeModalBtn() { document.getElementById('modalOverlay').classList.remove('open'); }
+function addFromModal() {
+  if (currentProduct) {
+    addToCart(currentProduct.id);
+    document.getElementById('modalOverlay').classList.remove('open');
+  }
+}
+
+// ====== ARMAZENAMENTO DO CARRINHO ======
+const CART_STORAGE_KEY = 'doceriaDaBia_carrinho';
+
+function saveCartToStorage() {
+  try {
+    localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
+  } catch (e) {
+    console.warn('Não foi possível salvar o carrinho localmente.', e);
+  }
+}
+
+function loadCartFromStorage() {
+  try {
+    const saved = localStorage.getItem(CART_STORAGE_KEY);
+    if (saved) {
+      cart = JSON.parse(saved);
+      updateCart();
+    }
+  } catch (e) {
+    console.warn('Não foi possível carregar o carrinho salvo.', e);
+    cart = [];
+  }
+}
+
+// ====== CARRINHO ======
+function addToCart(id) {
+  const p = products.find(x => x.id === id);
+  const price = buyPrice(p);
+  const label = buyLabel(p);
+  const existing = cart.find(x => x.id === id);
+  if (existing) existing.qty++;
+  else cart.push({...p, qty:1, price, label});
+  updateCart();
+  showToast(`${p.name} adicionado ao carrinho!`);
+}
+
+function updateCart() {
+  hidePayStep();
+  document.getElementById('cartBadge').textContent = cart.reduce((s,x) => s + x.qty, 0);
+  renderCartItems();
+  renderCartFooter();
+  saveCartToStorage();
+}
+
+function renderCartItems() {
+  const container = document.getElementById('cartItems');
+  const empty = document.getElementById('cartEmpty');
+  const pickup = document.getElementById('pickupInfo');
+  const comment = document.getElementById('cartComment');
+  const checkoutForm = document.getElementById('checkoutForm');
+
+  if (!cart.length) {
+    empty.style.display = 'block';
+    container.innerHTML = '';
+    pickup.style.display = 'none';
+    comment.style.display = 'none';
+    checkoutForm.style.display = 'none';
+    return;
+  }
+  empty.style.display = 'none';
+  pickup.style.display = 'flex';
+  comment.style.display = 'block';
+  checkoutForm.style.display = 'block';
+
+  container.innerHTML = cart.map(item => `
+    <div class="cart-item">
+      <img class="cart-item-emoji" src="${imgSrc(item)}" alt="${item.name}" loading="lazy" onerror="this.style.display='none'">
+      <div class="cart-item-info">
+        <div class="cart-item-name">${item.name} <span style="font-weight:400;color:var(--texto-medio);font-size:.85rem">(${item.label})</span></div>
+        <div class="cart-item-price">R$ ${(item.price * item.qty).toFixed(2).replace('.',',')}</div>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="changeQty(${item.id},-1)" aria-label="Diminuir quantidade de ${item.name}">−</button>
+          <span class="qty-num">${item.qty}</span>
+          <button class="qty-btn" onclick="changeQty(${item.id},1)" aria-label="Aumentar quantidade de ${item.name}">+</button>
+        </div>
+      </div>
+      <button class="cart-remove" onclick="removeFromCart(${item.id})" title="Remover" aria-label="Remover ${item.name} do carrinho"><i class="fas fa-trash" aria-hidden="true"></i></button>
+    </div>
+  `).join('');
+}
+
+function changeQty(id, delta) {
+  const item = cart.find(x => x.id === id);
+  if (!item) return;
+  item.qty += delta;
+  if (item.qty <= 0) removeFromCart(id);
+  else updateCart();
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(x => x.id !== id);
+  updateCart();
+}
+
+function renderCartFooter() {
+  const footer = document.getElementById('cartFooter');
+  if (!cart.length) { footer.style.display = 'none'; return; }
+  footer.style.display = 'block';
+
+  const total = cart.reduce((s,x) => s + x.price * x.qty, 0);
+
+  footer.innerHTML = `
+    <div class="cart-total" style="border-top:2px solid var(--rosa-banner);padding-top:10px;margin-top:4px">
+      <span style="font-size:1.1rem">Total</span><span class="total-val">R$ ${total.toFixed(2).replace('.',',')}</span>
+    </div>
+    <div style="font-size:.9rem;color:var(--texto-medio);margin-bottom:12px;text-align:center">Escolha como vai pagar — o pagamento é feito na retirada</div>
+    <div class="payment-methods" role="group" aria-label="Forma de pagamento">
+      <button class="pay-btn ${selectedPayment==='pix'?'active':''}" id="pay-pix" onclick="selectPayment('pix')" aria-pressed="${selectedPayment==='pix'}"><i class="fa-brands fa-pix" aria-hidden="true"></i> Pix</button>
+      <button class="pay-btn ${selectedPayment==='card'?'active':''}" id="pay-card" onclick="selectPayment('card')" aria-pressed="${selectedPayment==='card'}"><i class="fas fa-credit-card" aria-hidden="true"></i> Cartão</button>
+      <button class="pay-btn ${selectedPayment==='dinheiro'?'active':''}" id="pay-dinheiro" onclick="selectPayment('dinheiro')" aria-pressed="${selectedPayment==='dinheiro'}"><i class="fas fa-money-bill-wave" aria-hidden="true"></i> Dinheiro</button>
+    </div>
+    <button class="btn-checkout" onclick="checkout()"><i class="fas fa-check" aria-hidden="true"></i> Finalizar pedido</button>
+  `;
+}
+
+function openCart() {
+  document.getElementById('cartSidebar').classList.add('open');
+  document.getElementById('cartSidebar').setAttribute('aria-hidden','false');
+  document.getElementById('cartOverlay').classList.add('open');
+}
+function closeCart() {
+  document.getElementById('cartSidebar').classList.remove('open');
+  document.getElementById('cartSidebar').setAttribute('aria-hidden','true');
+  document.getElementById('cartOverlay').classList.remove('open');
+}
+
+function selectPayment(method) {
+  selectedPayment = method;
+  renderCartFooter();
+}
+
+// ====== VALIDAÇÃO ======
+function isValidEmail(email) {
+  // Validação mais completa: formato geral + limites de tamanho e domínio com ponto
+  const re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+  if (!re.test(email)) return false;
+  if (email.length > 254) return false;
+  const [local] = email.split('@');
+  if (local.length > 64) return false;
+  return true;
+}
+
+function isValidPhone(phone) {
+  const digits = phone.replace(/\D/g, '');
+  return digits.length >= 10 && digits.length <= 11;
+}
+
+function setFieldError(inputId, errorId, message) {
+  const input = document.getElementById(inputId);
+  const errorBox = document.getElementById(errorId);
+  if (message) {
+    input.classList.add('invalid');
+    errorBox.querySelector('span').textContent = message;
+    errorBox.classList.add('show');
+  } else {
+    input.classList.remove('invalid');
+    errorBox.classList.remove('show');
+  }
+}
+
+function checkout() {
+  if (!cart.length) { showToast('Adicione doces ao carrinho primeiro!'); return; }
+
+  const name = document.getElementById('checkoutName').value.trim();
+  const phone = document.getElementById('checkoutPhone').value.trim();
+  const email = document.getElementById('checkoutEmail').value.trim();
+
+  let valid = true;
+  if (name.length < 3) { setFieldError('checkoutName','checkoutNameError','Informe seu nome completo.'); valid = false; }
+  else setFieldError('checkoutName','checkoutNameError','');
+
+  if (!isValidPhone(phone)) { setFieldError('checkoutPhone','checkoutPhoneError','Informe um telefone válido com DDD.'); valid = false; }
+  else setFieldError('checkoutPhone','checkoutPhoneError','');
+
+  if (!isValidEmail(email)) { setFieldError('checkoutEmail','checkoutEmailError','Informe um e-mail válido.'); valid = false; }
+  else setFieldError('checkoutEmail','checkoutEmailError','');
+
+  if (!valid) { showToast('Confira os dados destacados antes de continuar.'); return; }
+
+  const total = cart.reduce((s,x) => s + x.price * x.qty, 0);
+  const commentEl = document.getElementById('orderComment');
+  const order = {
+    number: 'DB' + Math.floor(100000 + Math.random()*900000),
+    name, phone, email, total,
+    payment: selectedPayment,
+    comment: commentEl ? commentEl.value.trim() : '',
+    items: cart.map(x => ({ name:x.name, label:x.label, qty:x.qty, price:x.price }))
+  };
+  currentOrder = order;
+
+  finalizeOrder(order);
+}
+
+// ====== PAGAMENTO: CONFIGURAÇÃO ======
+const WHATSAPP_NUMBER = '5562999189033';
+let currentOrder = null;
+
+function escapeHTML(t) {
+  return String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function money(v) { return 'R$ ' + v.toFixed(2).replace('.', ','); }
+
+// ====== PAGAMENTO: ETAPAS NO CARRINHO ======
+function showPayStep(html, title) {
+  document.getElementById('cartHeadTitle').textContent = title;
+  document.getElementById('cartBody').style.display = 'none';
+  document.getElementById('cartFooter').style.display = 'none';
+  const ps = document.getElementById('payStep');
+  ps.innerHTML = html;
+  ps.style.display = 'block';
+  ps.scrollTop = 0;
+}
+function hidePayStep() {
+  const ps = document.getElementById('payStep');
+  if (!ps || ps.style.display === 'none') return;
+  ps.style.display = 'none';
+  ps.innerHTML = '';
+  document.getElementById('cartBody').style.display = 'block';
+  document.getElementById('cartHeadTitle').textContent = 'Meu carrinho';
+}
+function backToCart() {
+  hidePayStep();
+  renderCartFooter();
+}
+
+// ====== CONFIRMAÇÃO ======
+function paymentLabel(o) {
+  if (o.payment === 'pix') return 'Pix na retirada';
+  if (o.payment === 'dinheiro') return 'Dinheiro na retirada';
+  return 'Cartão na retirada';
+}
+function whatsappOrderLink(o) {
+  const itens = o.items.map(i => `• ${i.qty}x ${i.name} (${i.label})`).join('\n');
+  let msg = `Olá! Fiz o pedido ${o.number} pelo site.\n${itens}\nTotal: ${money(o.total)}\nPagamento: ${paymentLabel(o)}\nRetirada no local.`;
+  if (o.comment) msg += `\nObs: ${o.comment}`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+function finalizeOrder(o) {
+  const nota = o.payment === 'pix'
+    ? 'O pagamento será feito via Pix na retirada.'
+    : o.payment === 'card'
+      ? 'Leve o cartão: o pagamento será feito na maquininha na retirada.'
+      : 'O pagamento será feito em dinheiro na retirada.';
+  showPayStep(`
+    <div class="success-screen">
+      <i class="fas fa-circle-check success-icon" aria-hidden="true"></i>
+      <h3>Pedido realizado!</h3>
+      <p><strong>Número do pedido:</strong> ${o.number}</p>
+      <p><strong>Cliente:</strong> ${escapeHTML(o.name)}</p>
+      <p><strong>Total:</strong> ${money(o.total)} · <strong>Pagamento:</strong> ${paymentLabel(o)}</p>
+      <p style="margin-top:10px">${nota}</p>
+      <p style="margin-top:10px"><strong>Retirada no local</strong> — combinaremos o horário pelo WhatsApp (${escapeHTML(o.phone)}).</p>
+      <a class="btn-primary" style="margin-top:18px;justify-content:center;width:100%;text-decoration:none" href="${whatsappOrderLink(o)}" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i> Enviar pedido no WhatsApp
+      </a>
+      <button class="btn-ghost" onclick="resetCart()">Continuar comprando</button>
+    </div>
+  `, 'Pedido confirmado!');
+}
+
+function resetCart() {
+  cart = [];
+  saveCartToStorage();
+  document.getElementById('cartBody').style.display = 'block';
+  document.getElementById('cartHeadTitle').textContent = 'Meu carrinho';
+  document.getElementById('checkoutName').value = '';
+  document.getElementById('checkoutPhone').value = '';
+  document.getElementById('checkoutEmail').value = '';
+  updateCart();
+  closeCart();
+}
+
+// ====== NEWSLETTER ======
+function subscribeNewsletter() {
+  const input = document.getElementById('newsletterEmail');
+  const email = input.value.trim();
+  if (!isValidEmail(email)) {
+    setFieldError('newsletterEmail','newsletterError','Digite um e-mail válido, ex: nome@exemplo.com');
+    return;
+  }
+  setFieldError('newsletterEmail','newsletterError','');
+  showToast('Inscrita com sucesso! Aguarde nossas novidades.');
+  input.value = '';
+}
+
+// ====== FORMULÁRIO DE CONTATO ======
+const CONTACT_EMAIL = 'biliscadoces@gmail.com';
+function submitContactForm(event) {
+  event.preventDefault();
+  const name = document.getElementById('contactName').value.trim();
+  const phone = document.getElementById('contactPhone').value.trim();
+  const email = document.getElementById('contactEmail').value.trim();
+  const message = document.getElementById('contactMessage').value.trim();
+
+  let valid = true;
+  if (name.length < 3) { setFieldError('contactName','contactNameError','Informe seu nome completo.'); valid = false; }
+  else setFieldError('contactName','contactNameError','');
+
+  if (!isValidPhone(phone)) { setFieldError('contactPhone','contactPhoneError','Informe um telefone válido com DDD.'); valid = false; }
+  else setFieldError('contactPhone','contactPhoneError','');
+
+  if (!isValidEmail(email)) { setFieldError('contactEmail','contactEmailError','Informe um e-mail válido.'); valid = false; }
+  else setFieldError('contactEmail','contactEmailError','');
+
+  if (message.length < 10) { setFieldError('contactMessage','contactMessageError','Escreva uma mensagem com pelo menos 10 caracteres.'); valid = false; }
+  else setFieldError('contactMessage','contactMessageError','');
+
+  if (!valid) { showToast('Confira os campos destacados antes de enviar.'); return; }
+
+  const assuntoSel = document.getElementById('contactSubject');
+  const assunto = assuntoSel.options[assuntoSel.selectedIndex].text;
+  const btn = document.querySelector('#contactForm button[type="submit"]');
+  if (btn) btn.disabled = true;
+
+  fetch('https://formsubmit.co/ajax/' + CONTACT_EMAIL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Contato pelo site: ' + assunto,
+      _replyto: email,
+      _template: 'table',
+      _captcha: 'false',
+      Nome: name,
+      Telefone: phone,
+      Email: email,
+      Assunto: assunto,
+      Mensagem: message
+    })
+  })
+  .then(r => { if (!r.ok) throw new Error('falha'); return r.json(); })
+  .then(() => {
+    showToast('Mensagem enviada! Em breve entraremos em contato.');
+    document.getElementById('contactForm').reset();
+  })
+  .catch(() => {
+    // Plano B: abre o app de e-mail do cliente com a mensagem pronta
+    const body = 'Nome: ' + name + '\nTelefone: ' + phone + '\nE-mail: ' + email + '\n\n' + message;
+    window.location.href = 'mailto:' + CONTACT_EMAIL +
+      '?subject=' + encodeURIComponent('Contato pelo site: ' + assunto) +
+      '&body=' + encodeURIComponent(body);
+    showToast('Abrimos seu app de e-mail para você enviar a mensagem.');
+  })
+  .finally(() => { if (btn) btn.disabled = false; });
+}
+
+// ====== COOKIES / LGPD ======
+const COOKIE_STORAGE_KEY = 'doceriaDaBia_cookieConsent';
+
+function initCookieBanner() {
+  try {
+    const consent = localStorage.getItem(COOKIE_STORAGE_KEY);
+    if (!consent) {
+      setTimeout(() => document.getElementById('cookieBanner').classList.add('show'), 600);
+    }
+  } catch (e) {
+    document.getElementById('cookieBanner').classList.add('show');
+  }
+}
+
+function handleCookieChoice(accepted) {
+  try {
+    localStorage.setItem(COOKIE_STORAGE_KEY, accepted ? 'accepted' : 'rejected');
+  } catch (e) { /* localStorage indisponível */ }
+  document.getElementById('cookieBanner').classList.remove('show');
+  showToast(accepted ? 'Preferências de cookies salvas.' : 'Cookies não essenciais recusados.');
+}
+
+// ====== TOAST ======
+let toastTimer;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => toast.classList.remove('show'), 3000);
+}
+</script>
+</body>
+</html>
